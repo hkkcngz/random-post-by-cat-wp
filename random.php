@@ -4,7 +4,7 @@
 function hc_shortcode() { 
  
     // Genel Kategorisindeki Tüm Yazıları ID'lerini Topla ve Diziye Aktar.
-    $rasgeleLoop = new WP_Query('showposts=-1&orderby=date&cat=1');
+    $rasgeleLoop = new WP_Query('showposts=-1&orderby=date&cat=1&post_type=post');
     if ($rasgeleLoop->have_posts()): while ($rasgeleLoop->have_posts()): $rasgeleLoop->the_post();
             $ID = get_the_ID();
             $genelIDs[] = "$ID";
